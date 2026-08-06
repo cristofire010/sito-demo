@@ -1,0 +1,6 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Icona comunicazione</title>
+  <circle cx="40" cy="40" r="38" fill="#eff6ff" stroke="#2563eb" stroke-width="4" />
+  <path d="M22 36h36M22 44h24" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
+  <path d="M30 28l-8-8v44l8-8" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti - Aurora Business Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">Aurora Business Studio</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="contatti.html" class="active">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-hero fade-in">
+      <div class="hero-decor">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container">
+        <h2>Contattaci</h2>
+        <p>Parliamo del tuo progetto e troviamo insieme la soluzione più adatta alla tua impresa.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section fade-in">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h3>Informazioni</h3>
+          <p>Email: info@aurorabusiness.it</p>
+          <p>Telefono: +39 02 1234 5678</p>
+          <p>Indirizzo: Via Roma 45, Milano</p>
+        </div>
+
+        <form id="contact-form">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Il tuo nome" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="La tua email" required />
+
+          <label for="message">Messaggio</label>
+          <textarea id="message" name="message" placeholder="Scrivi qui..." rows="5" required></textarea>
+
+          <button type="submit">Invia</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Aurora Business Studio. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <div id="popup-overlay" class="popup-overlay hidden">
+    <div class="popup-card">
+      <h3>Messaggio inviato</h3>
+      <p>Grazie per averci scritto. Riceverai una risposta presto.</p>
+      <button id="popup-close" type="button">Chiudi</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
