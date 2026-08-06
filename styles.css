@@ -477,12 +477,20 @@ button[type="submit"]:hover {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 840px) {
-  .service-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  nav a {
+    padding: 0.35rem 0;
   }
 
   .hero {
@@ -495,6 +503,24 @@ button[type="submit"]:hover {
     grid-template-columns: 1fr;
   }
 
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-image img {
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  .hero-graphics {
+    display: none;
+  }
+
+  .hero-text,
+  .page-hero .container {
+    width: 100%;
+  }
+
   .hero h2,
   .page-hero h2 {
     font-size: clamp(2rem, 6vw, 2.6rem);
@@ -504,6 +530,20 @@ button[type="submit"]:hover {
   .page-hero p {
     max-width: 100%;
   }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .page-hero {
+    padding: 2rem 1rem;
+  }
+
+  .service-grid article,
+  .contact-section form,
+  .feature-list li {
+    padding: 1.25rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -512,20 +552,32 @@ button[type="submit"]:hover {
     align-items: flex-start;
   }
 
+  nav {
+    width: 100%;
+    gap: 0.5rem;
+  }
+
   .hero {
     padding: 3rem 0 2rem;
   }
 
-  .hero .container {
-    width: 100%;
+  .hero .container,
+  .page-hero .container {
+    gap: 1.5rem;
   }
 
-  .hero h2 {
-    font-size: 2.1rem;
+  .hero h2,
+  .page-hero h2 {
+    font-size: 2rem;
   }
 
-  .hero p {
-    margin-bottom: 1.5rem;
+  .hero p,
+  .page-hero p {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-image img {
+    border-radius: 1.2rem;
   }
 
   .site-header {
