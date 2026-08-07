@@ -1,7 +1,8 @@
 <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
   <title>Icona strategia</title>
-  <circle cx="40" cy="40" r="38" fill="#eff6ff" stroke="#2563eb" stroke-width="4" />
-  <path d="M28 36h24M28 44h16" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
-  <circle cx="58" cy="26" r="6" fill="#2563eb" />
-  <path d="M50 32l10 10" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round" />
+  <circle cx="40" cy="40" r="38" fill="#121212" stroke="#ffb703" stroke-width="4" />
+  <path d="M28 36h24" fill="none" stroke="#f8f7f3" stroke-width="4" stroke-linecap="round" />
+  <path d="M28 44h16" fill="none" stroke="#f8f7f3" stroke-width="4" stroke-linecap="round" />
+  <circle cx="58" cy="26" r="6" fill="#ffb703" />
+  <path d="M50 32l10 10" fill="none" stroke="#ffb703" stroke-width="4" stroke-linecap="round" />
 </svg>
