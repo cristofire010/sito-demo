@@ -884,10 +884,21 @@ button[type="submit"]:hover {
     line-height: 1.7;
   }
 
-  .button,
+  .button {
+    width: min(240px, 90%);
+    margin: 0 auto;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+  }
+
   button[type="submit"] {
     width: 100%;
     justify-content: center;
+  }
+
+  .hero-text {
+    text-align: center;
   }
 
   .hero-image img {
