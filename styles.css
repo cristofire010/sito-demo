@@ -33,6 +33,11 @@ body {
   font-size: clamp(0.95rem, 1vw, 1.05rem);
 }
 
+main {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
 body.intro-active {
   overflow: hidden;
   height: 100vh;
@@ -378,6 +383,135 @@ nav a.active,
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
 }
 
+.stats-section {
+  padding-top: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.stats-grid article {
+  background: rgba(255, 183, 3, 0.06);
+  border: 1px solid rgba(255, 183, 3, 0.18);
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.stats-grid strong {
+  display: block;
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  color: var(--primary);
+  margin-bottom: 0.4rem;
+}
+
+.stats-grid span {
+  color: var(--muted);
+}
+
+.highlight-panel {
+  padding-top: 0;
+}
+
+.highlight-wrap {
+  display: grid;
+  grid-template-columns: 1.5fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 183, 3, 0.08), rgba(18, 18, 18, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  text-align: left;
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+}
+
+.company-panel,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-section .container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.info-card,
+.contact-info,
+.company-meta {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.process-grid div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.process-grid span {
+  display: inline-flex;
+  width: 2.2rem;
+  height: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 183, 3, 0.12);
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+
+.company-meta {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+@media (max-width: 768px) {
+  .hero .container,
+  .company-panel,
+  .contact-grid,
+  .highlight-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}
+
 @keyframes floatImage {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -399,13 +533,27 @@ nav a.active,
   border-radius: 1.75rem;
   background: linear-gradient(135deg, #151515 0%, #0f0f0f 100%);
   padding: 3rem 2rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
+  width: min(1180px, calc(100% - 2rem));
 }
 
 .page-hero .container {
   display: grid;
   gap: 1.5rem;
   align-items: center;
+  text-align: center;
+}
+
+.intro-contact-copy {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-contact-copy p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .page-hero .hero-decor {
@@ -505,7 +653,8 @@ nav a.active,
   max-width: 42rem;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .feature-list li {
@@ -537,10 +686,88 @@ nav a.active,
   margin-top: 0;
 }
 
-.contact-section form {
+.contact-section {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-shell {
+  width: min(980px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid rgba(255, 183, 3, 0.38);
+  border-radius: 1.5rem;
+  background: rgba(10, 12, 14, 0.96);
+  box-shadow: inset 0 0 0 1px rgba(255, 183, 3, 0.08);
+  text-align: center;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.contact-shell h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.contact-list {
   display: grid;
-  gap: 1rem;
-  max-width: 40rem;
+  gap: 1.3rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.contact-list p,
+.company-meta p {
+  margin: 0;
+  text-align: center;
+  color: #dfe2e8;
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.contact-list strong,
+.company-meta strong {
+  font-weight: 600;
+}
+
+.phone-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.phone-link:hover {
+  color: #ffd76f;
+  text-decoration: underline;
+}
+
+.company-meta {
+  margin-top: 2.2rem;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  border-radius: 1.2rem;
+  background: rgba(255, 255, 255, 0.01);
+  text-align: center;
+  animation: fadeInUp 0.9s ease both;
+}
+
+.phone-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.phone-link:hover {
+  color: #ffd76f;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+.contact-section form {
+  display: none;
 }
 
 label {
