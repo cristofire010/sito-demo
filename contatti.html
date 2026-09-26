@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contatti - Remiter</title>
-  <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles.css?v=20260926" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 </head>
 <body>
   <header class="site-header">
@@ -39,12 +39,13 @@
 
         <div class="contact-list">
           <p><strong>Telefono:</strong> <a class="phone-link" href="tel:+393474567891">+39 347 456 7891</a></p>
-          <p><strong>Sede legale:</strong> Contrada Cetti 18, 66023 Francavilla al Mare (CH)</p>
+          <p><strong>Sede legale:</strong> <a class="phone-link" href="https://www.google.com/maps/search/?api=1&amp;query=Contrada+Cetti+18%2C+66023+Francavilla+al+Mare+CH" target="_blank" rel="noopener noreferrer">Contrada Cetti 18, 66023 Francavilla al Mare (CH)</a></p>
           <p><strong>PEC società:</strong> <a class="phone-link" href="mailto:remitersas@pec.it">remitersas@pec.it</a></p>
           <p><strong>PEC rappresentante:</strong> <a class="phone-link" href="mailto:francescoremigio82@pec.it">francescoremigio82@pec.it</a></p>
-          <p><strong>Codice fiscale e partita IVA:</strong> 02879310692</p>
-          <p><strong>Numero REA:</strong> CH - 440512</p>
         </div>
+
+        <div id="map" class="map-frame" aria-label="Mappa interattiva della sede Remiter"></div>
+
       </div>
     </section>
   </main>
@@ -63,6 +64,26 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    // Mappa interattiva della sede (tessere OpenStreetMap, nessuna API key)
+    const sediMap = L.map('map', {
+      scrollWheelZoom: false,
+      dragging: false,       // disabilita drag/pan
+      touchZoom: true,       // pinch-to-zoom su mobile
+      doubleClickZoom: true, // zoom con doppio click
+      boxZoom: false,        // disabilita box zoom (shift + drag)
+      keyboard: false        // disabilita navigazione tastiera
+    }).setView([42.421478, 14.2678], 16);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(sediMap);
+    L.marker([42.421478, 14.2678])
+      .addTo(sediMap)
+      .bindPopup('<strong>Remiter S.A.S.</strong><br>Contrada Cetti 18, 66023 Francavilla al Mare (CH)');
+    window.addEventListener('load', () => sediMap.invalidateSize());
+  </script>
 </body>
 </html>
