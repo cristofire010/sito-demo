@@ -1,2 +1,4 @@
 .continue/
 .DS_Store
+# Brud Code workspace history
+.brud/
